@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    // Declare a min-heap by using greater<type>
+    // Declare a min-heap by using vector<type> & greater<type>
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
     // Add elements to the priority queue
