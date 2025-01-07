@@ -2,7 +2,8 @@
 #include <queue>
 using namespace std;
 
-int main() {
+int main() 
+{
     //queue <type> name of queue
     queue<string> queue;
 
