@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+
+//stack uses LIFO (last in first out)
 class Stack
 {
 private:
