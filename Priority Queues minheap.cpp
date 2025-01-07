@@ -2,6 +2,7 @@
 #include <queue>
 using namespace std;
 
+//FIFO
 int main()
 {
     // Declare a min-heap by using vector<type> & greater<type>
