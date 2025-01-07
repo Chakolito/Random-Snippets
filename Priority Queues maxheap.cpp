@@ -2,6 +2,7 @@
 #include <queue>
 using namespace std;
 
+//FIFO
 int main()
 {
     // Declare a max-heap (default behavior)
