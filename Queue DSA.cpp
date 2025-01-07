@@ -2,6 +2,7 @@
 #include <queue>
 using namespace std;
 
+//uses FIFO (First in First out)
 int main() 
 {
     //queue <type> name of queue
