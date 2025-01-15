@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+float prelim;
+float midterm;
+float final;
+
+
+    cout<<"Prelim Grade:\n";
+    cin>>prelim;
+    cout<<"Midterm Grade:\n";
+    cin>>midterm;
+    cout<<"Final Grade:\n";
+    cin>>final;
+
+if ( (prelim < 0 || prelim > 100) || (midterm < 0 || midterm > 100) || (final < 0 || final > 100) )
+{
+	cout << "input must be in range of 0-100" << endl;
+	cout << endl << "Run the code again";
+	return 0;
+}
+float fprelim = prelim * 0.30;
+float fmidterm = midterm * 0.30;
+float ffinal = final * 0.40;
+
+float grade = (fprelim+fmidterm+ffinal);
+    cout<<"Grade Average = "<< grade;
+
+return 0;
+}
