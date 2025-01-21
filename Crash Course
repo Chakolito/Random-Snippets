@@ -1,0 +1,32 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        Console.WriteLine (name);
+        string userName = Console.ReadLine();
+        Console.WriteLine(Hello  + userName);
+        
+        Console.WriteLine (Enter your Birth Month);
+        string bmonth = Console.ReadLine();
+        
+        Console.WriteLine (Enter your Birth day);
+        string bday = Console.ReadLine();
+        int.Parse(bday);
+        
+        Console.WriteLine (Enter your Birth Year);
+        string byear = Console.ReadLine();
+        int.Parse(byear);
+        
+        Console.WriteLine (Your Birthdate is  + bmonth +     + bday +     + byear);
+        
+        int lpyr = int.Parse(byear);
+        
+        if (lpyr % 4 == 0)
+            Console.Writeline (Your birthyear is a leap year);
+        else
+            Console.Writeline (Your birthyear is not a leap year)     
+        
+    }
+}
