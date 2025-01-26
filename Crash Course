@@ -4,30 +4,107 @@ public class HelloWorld
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine ("name:");
+
+        Console.WriteLine("Name:");
         string userName = Console.ReadLine();
         Console.WriteLine("Hello " + userName);
-        
-        Console.WriteLine ("Enter your Birth Month:");
-        string bmonth = Console.ReadLine();
-        
-        Console.WriteLine ("Enter your Birth day:");
-        string bday = Console.ReadLine();
-        int.Parse(bday);
-        
-        Console.WriteLine ("Enter your Birth Year:");
-        string byear = Console.ReadLine();
-        int.Parse(byear);
-        
-        Console.WriteLine ("Your Birthdate is " + bmonth + "   " + bday + "   " + byear);
-        
-        int lpyr = int.Parse(byear);
-        if (lpyr % 4 == 0){
-            Console.WriteLine ("Your birthyear is a leap year");
+
+    //Input of Birthdate(line 11-39)
+        Console.WriteLine("Enter your Birth Month (1-12):");
+        string bmonthInput = Console.ReadLine();
+        int bmonth;
+        while (!int.TryParse(bmonthInput, out bmonth) || bmonth < 1 || bmonth > 12)
+        {
+            Console.WriteLine("Invalid month. Please enter a number between 1 and 12:");
+            bmonthInput = Console.ReadLine();
         }
-        else{
-            Console.WriteLine ("Your birthyear is not a leap year");
+
+        Console.WriteLine("Enter your Birth Day (1-31):");
+        string bdayInput = Console.ReadLine();
+        int bday;
+        while (!int.TryParse(bdayInput, out bday) || bday < 1 || bday > 31)
+        {
+            Console.WriteLine("Invalid day. Please enter a number between 1 and 31:");
+            bdayInput = Console.ReadLine();
         }
-        
+
+        Console.WriteLine("Enter your Birth Year:");
+        string byearInput = Console.ReadLine();
+        int byear;
+        while (!int.TryParse(byearInput, out byear) || byear <= 0)
+        {
+            Console.WriteLine("Invalid year. Please enter a valid positive number:");
+            byearInput = Console.ReadLine();
+        }
+
+        Console.WriteLine($"Your Birthdate is {bmonth}/{bday}/{byear}");
+
+    // Leapyear check
+        if ((byear % 4 == 0 && byear % 100 != 0) || (byear % 400 == 0))
+        {
+            Console.WriteLine("Your birth year is a leap year.");
+        }
+        else
+        {
+            Console.WriteLine("Your birth year is not a leap year.");
+        }
+
+    // Calculate age
+        DateTime birthDate = new DateTime(byear, bmonth, bday);
+        DateTime today = DateTime.Now;
+        int age = today.Year - birthDate.Year;
+
+     // Determine if birthday has occurred this year
+        if (today < birthDate.AddYears(age))
+        {
+            age--;
+        }
+
+        Console.WriteLine($"You are {age} years old.");
+
+     // Determine Generation
+        string generation = GetGeneration(byear);//calls the private getgeneration function
+        Console.WriteLine($"Based on your birth year, you are part of {generation}.");
+    }
+
+//Generation Function
+    private static string GetGeneration(int year)
+    {
+        if (year >= 1901 && year <= 1927)
+        {
+            return "The Greatest Generation.";
+        }
+        else if (year >= 1928 && year <= 1945)
+        {
+            return "The Silent Generation";
+        }
+        else if (year >= 1946 && year <= 1964)
+        {
+            return "The Baby Boomer Generation.";
+        }
+        else if (year >= 1965 && year <= 1980)
+        {
+            return "Generation X.";
+        }
+        else if (year >= 1981 && year <= 1996)
+        {
+            return "The Millennial Generation.";
+        }
+        else if (year >= 1997 && year <= 2012)
+        {
+            return "Generation Z.";
+        }
+        else if (year >= 2013 && year <= 2024)
+        {
+            return "Generation Alpha.";
+        }
+         else if (year >= 2025 && year <= 2039)
+        {
+            return "Generation Beta.";
+        }
+        else
+        {
+            return "Year not within defined generations.";
+        }
     }
 }
