@@ -1,4 +1,11 @@
-Name
-BDATE
-Lpyr
-Generation check by checking current age using CURRENTDATETIME
+N̶a̶m̶e̶
+̶B̶D̶A̶T̶E̶
+̶L̶p̶y̶r̶
+̶G̶e̶n̶e̶r̶a̶t̶i̶o̶n̶ ̶c̶h̶e̶c̶k̶ ̶b̶y̶ ̶c̶h̶e̶c̶k̶i̶n̶g̶ ̶c̶u̶r̶r̶e̶n̶t̶ ̶a̶g̶e̶ ̶u̶s̶i̶n̶g̶ ̶C̶U̶R̶R̶E̶N̶T̶D̶A̶T̶E̶T̶I̶M̶E̶
+
+OOP TIME
+1.MyPlayer
+  1.1 GetDetails(bday/bmonth/byear)
+  1.2 Leapyear
+  1.4 Age Check
+  1.5 Generation Check
