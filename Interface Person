@@ -1,0 +1,18 @@
+using system
+
+interface IPerson
+{
+//variable declaration
+public string Fname{ private get; public set}
+public string Lname{ private get; public set}
+public string Mname{ private get; public set}
+public Datetime Birthday{ private get; public set}
+public string Email{ private get; public set}
+
+//methods
+public void GetFname()
+public void GetLname()
+public void GetMname()
+public void GetBirthday()
+public void GetEmail()
+}
